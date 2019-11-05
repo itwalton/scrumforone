@@ -1,0 +1,8 @@
+# config
+.env
+
+# compiled assets
+dist/
+
+# dependencies
+node_modules/
