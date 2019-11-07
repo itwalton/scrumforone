@@ -1,16 +1,12 @@
 import express from 'express';
-import mongoose from 'mongoose';
 
-import ItemRepository from './item.repository'
+import { ItemModel, Item } from './item.model'
 
-export default (mongooseConn: mongoose.Mongoose) => {
-  const schema: mongoose.Schema = new mongoose.Schema({ title: String });
-  const Item: mongoose.Model<mongoose.Document> = mongoose.model('Item', schema);
-
+export default () => {
   return express.Router()
     .get('/', async (req: express.Request, res: express.Response) => {
       return res.status(200).json({
-        items: await Item.find({})
+        items: await Item.find()
       })
     })
 
@@ -18,7 +14,7 @@ export default (mongooseConn: mongoose.Mongoose) => {
       const id: string = req.params.id
 
       return res.status(200).json({
-        item: await Item.find({ id })
+        item: await Item.findById(id)
       })
     })
 };

@@ -9,8 +9,8 @@ import { createItemRoutes } from './item';
   const app: express.Application = express();
   const port: string | undefined = process.env.SERVER_PORT;
 
-  const mongoUrl: string | undefined = process.env.MONGO_URL || ''
-  const mongooseConn: mongoose.Mongoose = await mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+  const mongoUrl: string | undefined = process.env.MONGO_URL || '';
+  const mongooseConn: mongoose.Mongoose = await mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
   app
     .use(bodyParser.json())

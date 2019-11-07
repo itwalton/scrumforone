@@ -5,7 +5,7 @@
   "main": "dist",
   "scripts": {
     "lint": "tsc && eslint src/**/*.ts",
-    "build": "babel src -d dist --extensions '.ts' --ignore src/**/*.spec.ts",
+    "build": "npm run lint && babel src -d dist --extensions '.ts' --ignore src/**/*.spec.ts",
     "start": "npm run build && node dist",
     "test": "mocha -r ts-node/register src/**/*.spec.ts",
     "dev": "nodemon --exec babel-node src/index.ts --extensions '.ts'"
