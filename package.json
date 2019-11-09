@@ -18,7 +18,7 @@
     "scrum",
     "oss"
   ],
-  "precommit": "test",
+  "precommit": "lint, test",
   "author": "Ian Walton",
   "license": "UNLICENSED",
   "dependencies": {

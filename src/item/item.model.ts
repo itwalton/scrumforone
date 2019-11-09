@@ -6,7 +6,7 @@ interface Iitem {
 
 export interface ItemModel extends Iitem, Document { };
 
-export var ItemSchema: Schema = new Schema({
+export const ItemSchema: Schema = new Schema({
   title: String
 });
 

@@ -1,1 +1,1 @@
-export { ItemRoutes } from './item.routes'
+export { ItemRoutes } from './item.routes';
