@@ -1,5 +1,5 @@
 # config
-.env
+config/*.config.ts
 
 # compiled assets
 dist/
