@@ -3,7 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
-import { createItemRoutes } from './item';
+import { ItemRoutes } from './item';
 
 (async () => {
   const app: express.Application = express();
@@ -15,7 +15,7 @@ import { createItemRoutes } from './item';
   app
     .use(bodyParser.json())
 
-    .use('/items', createItemRoutes(mongooseConn))
+    .use('/items', ItemRoutes)
 
     .use('/', (req: express.Request, res: express.Response) => {
       return res.send('Hello World!');

@@ -18,6 +18,7 @@
     "scrum",
     "oss"
   ],
+  "precommit": "test",
   "author": "Ian Walton",
   "license": "UNLICENSED",
   "dependencies": {
@@ -25,7 +26,8 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "lodash": "^4.17.15",
-    "mongoose": "^5.7.8"
+    "mongoose": "^5.7.8",
+    "pre-commit": "^1.2.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
