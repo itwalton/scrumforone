@@ -6,9 +6,9 @@
   "scripts": {
     "lint": "tsc && eslint src/**/*.ts",
     "build": "npm run lint && babel src -d dist --extensions '.ts' --ignore src/**/*.spec.ts",
-    "start": "npm run build && node dist",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts",
-    "dev": "nodemon --exec babel-node src/index.ts --extensions '.ts'"
+    "start": "npm run build && node dist/index | bunyan",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts --exit",
+    "dev": "nodemon --exec babel-node src/index.ts --extensions '.ts' | bunyan"
   },
   "repository": {
     "type": "git",
@@ -23,10 +23,13 @@
   "license": "UNLICENSED",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "bunyan": "^1.8.12",
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "mongoose": "^5.7.8",
-    "pre-commit": "^1.2.2"
+    "nuid": "^1.1.0",
+    "@types/swagger-ui-express": "^3.0.1",
+    "swagger-ui-express": "^4.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
@@ -39,14 +42,20 @@
     "@types/chai": "^4.2.4",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.2",
+    "@types/lodash": "^4.14.146",
     "@types/mocha": "^5.2.7",
     "@types/mongoose": "^5.5.29",
+    "@types/supertest": "^2.0.8",
+    "@types/verror": "^1.10.3",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.6.1",
     "chai": "^4.2.0",
     "eslint": "^6.6.0",
+    "install": "^0.13.0",
     "mocha": "^6.2.2",
     "nodemon": "^1.19.4",
+    "npm": "^6.13.0",
+    "pre-commit": "^1.2.2",
     "supertest": "^4.0.2",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.4"

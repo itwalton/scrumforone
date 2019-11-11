@@ -4,10 +4,12 @@
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
+    "allowJs": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "resolveJsonModule": true
   },
   "include": [
     "src/**/*.ts"

@@ -7,7 +7,8 @@ interface Iitem {
 export interface ItemModel extends Iitem, Document { };
 
 export const ItemSchema: Schema = new Schema({
+  _id: String,
   title: String
-});
+}, { _id: false });
 
 export const Item: Model<ItemModel> = model<ItemModel>("Item", ItemSchema);
